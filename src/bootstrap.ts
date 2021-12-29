@@ -12,10 +12,11 @@ const bootstrap = async () => {
     lowGraphics,
     highPriority,
     shuffleClients,
+    activeClients,
     clients,
   } = config;
 
-  const enabledClients = clients.filter((client) => client.enable);
+  const enabledClients = clients.slice(0, activeClients);
   const processedClients = shuffleClients ? lodash.shuffle(enabledClients) : enabledClients;
 
   try {

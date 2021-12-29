@@ -5,93 +5,143 @@ export const config = {
   highPriority: true,
   // Запускать в оконном режиме
   windowedMode: true,
-  // Запускать в графике 16-бит
+  // Запускать в 16-бит графике
   lowGraphics: true,
   // Перемешивать клиенты
-  shuffleClients: true,
-  // Список клиентов
+  shuffleClients: false,
+  // Количество клиентов к запуску (min = 1, max = 32)
+  activeClients: 5,
+  // Список клиентов (null значения заменятся рандомными)
   clients: [
     {
-      // Внутриигровой ник
-      name: 'mXn',
-      // Включение или отключение
-      enable: true,
+      // Никнейм (nickname: "Player" as string | null)
+      nickname: null as string | null,
+      // SteamID (steamId: "8483213" as string | null)
+      steamId: null as string | null,
     },
     {
-      name: 'Bloody',
-      enable: true,
+      nickname: null as null | string,
+      steamId: null as null | string,
     },
     {
-      name: '♠MacMillan♠',
-      enable: true,
+      nickname: null as null | string,
+      steamId: null as null | string,
     },
     {
-      name: 'SnoxJ',
-      enable: true,
+      nickname: null as null | string,
+      steamId: null as null | string,
     },
     {
-      name: 'Don1**',
-      enable: true,
+      nickname: null as null | string,
+      steamId: null as null | string,
     },
     {
-      name: 'V.I.R.U.S',
-      enable: false,
+      nickname: null as null | string,
+      steamId: null as null | string,
     },
     {
-      name: 'IcePower',
-      enable: false,
+      nickname: null as null | string,
+      steamId: null as null | string,
     },
     {
-      name: 'ax1le',
-      enable: false,
+      nickname: null as null | string,
+      steamId: null as null | string,
     },
     {
-      name: '-[aWp maN1aK]',
-      enable: false,
+      nickname: null as null | string,
+      steamId: null as null | string,
     },
     {
-      name: '♔Lucky♔',
-      enable: false,
+      nickname: null as null | string,
+      steamId: null as null | string,
     },
     {
-      name: '.:Dom1no:.',
-      enable: false,
+      nickname: null as null | string,
+      steamId: null as null | string,
     },
     {
-      name: 'Ăďΐďάś',
-      enable: false,
+      nickname: null as null | string,
+      steamId: null as null | string,
     },
     {
-      name: 'Pozitiw4ik',
-      enable: false,
+      nickname: null as null | string,
+      steamId: null as null | string,
     },
     {
-      name: '__sry^Fwam.Inc',
-      enable: false,
+      nickname: null as null | string,
+      steamId: null as null | string,
     },
     {
-      name: 'ApXuTekToR',
-      enable: false,
+      nickname: null as null | string,
+      steamId: null as null | string,
     },
     {
-      name: 'Lorex',
-      enable: false,
+      nickname: null as null | string,
+      steamId: null as null | string,
     },
     {
-      name: 'TaTaPuH',
-      enable: false,
+      nickname: null as null | string,
+      steamId: null as null | string,
     },
     {
-      name: 'Donjkeee^',
-      enable: false,
+      nickname: null as null | string,
+      steamId: null as null | string,
     },
     {
-      name: '-=Kapa=-',
-      enable: false,
+      nickname: null as null | string,
+      steamId: null as null | string,
     },
     {
-      name: 'Б@Б@Й',
-      enable: false,
+      nickname: null as null | string,
+      steamId: null as null | string,
+    },
+    {
+      nickname: null as null | string,
+      steamId: null as null | string,
+    },
+    {
+      nickname: null as null | string,
+      steamId: null as null | string,
+    },
+    {
+      nickname: null as null | string,
+      steamId: null as null | string,
+    },
+    {
+      nickname: null as null | string,
+      steamId: null as null | string,
+    },
+    {
+      nickname: null as null | string,
+      steamId: null as null | string,
+    },
+    {
+      nickname: null as null | string,
+      steamId: null as null | string,
+    },
+    {
+      nickname: null as null | string,
+      steamId: null as null | string,
+    },
+    {
+      nickname: null as null | string,
+      steamId: null as null | string,
+    },
+    {
+      nickname: null as null | string,
+      steamId: null as null | string,
+    },
+    {
+      nickname: null as null | string,
+      steamId: null as null | string,
+    },
+    {
+      nickname: null as null | string,
+      steamId: null as null | string,
+    },
+    {
+      nickname: null as null | string,
+      steamId: null as null | string,
     },
   ],
 };

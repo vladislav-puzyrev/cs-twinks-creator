@@ -16,6 +16,12 @@ const bootstrap = async () => {
     clients,
   } = config;
 
+  if (activeClients < 1 || activeClients > 32) {
+    const err = new Error('activeClients must be greater than 1 and less than 32');
+    console.log(`Проверка конфигурации - ${chalk.red('ошибка')}`, err);
+    throw err;
+  }
+
   const enabledClients = clients.slice(0, activeClients);
   const processedClients = shuffleClients ? lodash.shuffle(enabledClients) : enabledClients;
 

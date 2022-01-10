@@ -5,9 +5,9 @@ import { ConfigType } from '../types/ConfigType';
 export const bootstrapStartBat = async (
   clients: ConfigType['clients'],
   startTimeout: number,
-  highPriority: boolean,
   windowedMode: boolean,
   lowGraphics: boolean,
+  highPriority: boolean,
 ): Promise<void> => {
   const startBatPath = path.join(__dirname, '../../start.bat');
   const clientPath = path.join(__dirname, '../../clients/CS_%%i');

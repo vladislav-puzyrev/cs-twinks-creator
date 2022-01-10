@@ -14,134 +14,134 @@ export const config = {
   // Список клиентов (null значения заменятся рандомными)
   clients: [
     {
-      // Никнейм (nickname: "Player" as string | null)
-      nickname: null as string | null,
-      // SteamID (steamId: "8483213" as string | null)
-      steamId: null as string | null,
+      // Никнейм (например - nickname: "Player")
+      nickname: null,
+      // SteamID (например - steamId: "8483213")
+      steamId: null,
     },
     {
-      nickname: null as null | string,
-      steamId: null as null | string,
+      nickname: null,
+      steamId: null,
     },
     {
-      nickname: null as null | string,
-      steamId: null as null | string,
+      nickname: null,
+      steamId: null,
     },
     {
-      nickname: null as null | string,
-      steamId: null as null | string,
+      nickname: null,
+      steamId: null,
     },
     {
-      nickname: null as null | string,
-      steamId: null as null | string,
+      nickname: null,
+      steamId: null,
     },
     {
-      nickname: null as null | string,
-      steamId: null as null | string,
+      nickname: null,
+      steamId: null,
     },
     {
-      nickname: null as null | string,
-      steamId: null as null | string,
+      nickname: null,
+      steamId: null,
     },
     {
-      nickname: null as null | string,
-      steamId: null as null | string,
+      nickname: null,
+      steamId: null,
     },
     {
-      nickname: null as null | string,
-      steamId: null as null | string,
+      nickname: null,
+      steamId: null,
     },
     {
-      nickname: null as null | string,
-      steamId: null as null | string,
+      nickname: null,
+      steamId: null,
     },
     {
-      nickname: null as null | string,
-      steamId: null as null | string,
+      nickname: null,
+      steamId: null,
     },
     {
-      nickname: null as null | string,
-      steamId: null as null | string,
+      nickname: null,
+      steamId: null,
     },
     {
-      nickname: null as null | string,
-      steamId: null as null | string,
+      nickname: null,
+      steamId: null,
     },
     {
-      nickname: null as null | string,
-      steamId: null as null | string,
+      nickname: null,
+      steamId: null,
     },
     {
-      nickname: null as null | string,
-      steamId: null as null | string,
+      nickname: null,
+      steamId: null,
     },
     {
-      nickname: null as null | string,
-      steamId: null as null | string,
+      nickname: null,
+      steamId: null,
     },
     {
-      nickname: null as null | string,
-      steamId: null as null | string,
+      nickname: null,
+      steamId: null,
     },
     {
-      nickname: null as null | string,
-      steamId: null as null | string,
+      nickname: null,
+      steamId: null,
     },
     {
-      nickname: null as null | string,
-      steamId: null as null | string,
+      nickname: null,
+      steamId: null,
     },
     {
-      nickname: null as null | string,
-      steamId: null as null | string,
+      nickname: null,
+      steamId: null,
     },
     {
-      nickname: null as null | string,
-      steamId: null as null | string,
+      nickname: null,
+      steamId: null,
     },
     {
-      nickname: null as null | string,
-      steamId: null as null | string,
+      nickname: null,
+      steamId: null,
     },
     {
-      nickname: null as null | string,
-      steamId: null as null | string,
+      nickname: null,
+      steamId: null,
     },
     {
-      nickname: null as null | string,
-      steamId: null as null | string,
+      nickname: null,
+      steamId: null,
     },
     {
-      nickname: null as null | string,
-      steamId: null as null | string,
+      nickname: null,
+      steamId: null,
     },
     {
-      nickname: null as null | string,
-      steamId: null as null | string,
+      nickname: null,
+      steamId: null,
     },
     {
-      nickname: null as null | string,
-      steamId: null as null | string,
+      nickname: null,
+      steamId: null,
     },
     {
-      nickname: null as null | string,
-      steamId: null as null | string,
+      nickname: null,
+      steamId: null,
     },
     {
-      nickname: null as null | string,
-      steamId: null as null | string,
+      nickname: null,
+      steamId: null,
     },
     {
-      nickname: null as null | string,
-      steamId: null as null | string,
+      nickname: null,
+      steamId: null,
     },
     {
-      nickname: null as null | string,
-      steamId: null as null | string,
+      nickname: null,
+      steamId: null,
     },
     {
-      nickname: null as null | string,
-      steamId: null as null | string,
+      nickname: null,
+      steamId: null,
     },
-  ],
+  ] as Array<{ nickname: string | null, steamId: string | null }>,
 };

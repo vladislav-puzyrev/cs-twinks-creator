@@ -1,12 +1,12 @@
 export const config = {
   // Задержка после запуска каждой копии клиента
   startTimeout: 0,
-  // Запускать с высоким приоритетом
-  highPriority: true,
   // Запускать в оконном режиме
   windowedMode: true,
   // Запускать в 16-бит графике
   lowGraphics: true,
+  // Запускать с высоким приоритетом
+  highPriority: false,
   // Перемешивать клиенты
   shuffleClients: false,
   // Количество клиентов к запуску (min = 1, max = 32)

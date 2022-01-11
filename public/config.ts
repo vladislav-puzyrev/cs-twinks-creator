@@ -3,7 +3,7 @@ export const config = {
   startTimeout: 0,
   // Запускать в оконном режиме
   windowedMode: true,
-  // Запускать в 16-бит графике
+  // Запускать с низкой графикой
   lowGraphics: true,
   // Запускать с высоким приоритетом
   highPriority: false,
@@ -11,7 +11,7 @@ export const config = {
   shuffleClients: false,
   // Количество клиентов к запуску (min = 1, max = 32)
   activeClients: 5,
-  // Список клиентов (null значения заменятся рандомными)
+  // Список клиентов (можно указать постоянный nickname и steamId)
   clients: [
     {
       // Никнейм (например - nickname: "Player")

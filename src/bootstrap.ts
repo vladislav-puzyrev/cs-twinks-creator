@@ -3,7 +3,7 @@ import lodash from 'lodash';
 import { bootstrapClients } from './bootstrap/bootstrapClients';
 import { bootstrapSandboxie } from './bootstrap/bootstrapSandboxie';
 import { bootstrapStartBat } from './bootstrap/bootstrapStartBat';
-import { config } from '../config';
+import { config } from '../public/config';
 
 const bootstrap = async () => {
   const {

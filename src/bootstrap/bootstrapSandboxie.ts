@@ -6,7 +6,7 @@ export const bootstrapSandboxie = async (clients: ConfigType['clients']): Promis
   let config = await fs.readFile(path.join(__dirname, '../utils/Sandboxie.ini'), 'utf-16le');
 
   clients.forEach((client, i) => {
-    const clientPath = path.join(__dirname, `../../clients/CS_${i + 1}`);
+    const clientPath = path.join(__dirname, `../../public/clients/CS_${i + 1}`);
 
     config += `
 [CS_${i + 1}]

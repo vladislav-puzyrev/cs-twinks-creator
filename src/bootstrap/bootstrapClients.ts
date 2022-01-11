@@ -5,34 +5,25 @@ import { parseNicknames } from '../utils/parseNicknames';
 import { ConfigType } from '../types/ConfigType';
 
 export const bootstrapClients = async (clients: ConfigType['clients']): Promise<void> => {
-  const clientPath = path.join(__dirname, '../../clients/CS');
+  const clientPath = path.join(__dirname, '../../public/clients/CS');
+  const modsPath = path.join(__dirname, '../../public/mods');
 
-  const copyOperations = clients.map((client, i) => {
-    return fs.copy(clientPath, `${clientPath}_${i + 1}`, {
-      recursive: true,
-      overwrite: true,
-    });
+  const copyClientOperations = clients.map((client, i) => {
+    return fs.copy(clientPath, `${clientPath}_${i + 1}`, { overwrite: true });
   });
 
-  await Promise.all(copyOperations);
+  await Promise.all(copyClientOperations);
 
-  const readOperations = clients.map((client, i) => {
-    return fs.readFile(`${clientPath}_${i + 1}/cstrike/config.cfg`, 'utf-8');
-  });
-
-  const [userConfig, configs, nicknames] = await Promise.all([
-    fs.readFile(path.join(__dirname, '../../userconfig.cfg'), 'utf-8'),
-    Promise.all(readOperations),
+  const [userConfig, config, nicknames] = await Promise.all([
+    fs.readFile(path.join(__dirname, '../../public/userconfig.cfg'), 'utf-8'),
+    fs.readFile(path.join(__dirname, '../../public/clients/CS/cstrike/config.cfg'), 'utf-8'),
     parseNicknames(),
   ]);
 
-  const configureOperations = clients.map((client, i) => {
+  const configureClientOperations = clients.map((client, i) => {
     const { nickname, steamId } = client;
-    const config = configs[i];
-    const configPath = path.join(__dirname, `../../clients/CS_${i + 1}/cstrike/config.cfg`);
-    const userConfigPath = path.join(__dirname, `../../clients/CS_${i + 1}/cstrike/userconfig.cfg`);
-    const changerASIPath = path.join(__dirname, '../utils/changer.asi');
-    const changerDLLPath = path.join(__dirname, '../utils/changer.dll');
+    const configPath = `${clientPath}_${i + 1}/cstrike/config.cfg`;
+    const userConfigPath = `${clientPath}_${i + 1}/cstrike/userconfig.cfg`;
 
     const processedUserConfig = userConfig
       .replace(
@@ -45,9 +36,8 @@ export const bootstrapClients = async (clients: ConfigType['clients']): Promise<
       );
 
     const operations = [
+      fs.copy(modsPath, `${clientPath}_${i + 1}`, { overwrite: true }),
       fs.writeFile(userConfigPath, processedUserConfig),
-      fs.copy(changerASIPath, `${clientPath}_${i + 1}/changer.asi`),
-      fs.copy(changerDLLPath, `${clientPath}_${i + 1}/changer.dll`),
     ];
 
     if (!config.includes('exec userconfig.cfg')) {
@@ -59,5 +49,5 @@ export const bootstrapClients = async (clients: ConfigType['clients']): Promise<
     return operations;
   });
 
-  await Promise.all(configureOperations.flat());
+  await Promise.all(configureClientOperations.flat());
 };

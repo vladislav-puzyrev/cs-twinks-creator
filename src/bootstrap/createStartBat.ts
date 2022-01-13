@@ -2,7 +2,7 @@ import path from 'path';
 import fs from 'fs-extra';
 import { ClientType } from '../types/ClientType';
 
-export const bootstrapStartBat = async (
+export const createStartBat = async (
   clients: ClientType[],
   startTimeout: number,
   windowedMode: boolean,

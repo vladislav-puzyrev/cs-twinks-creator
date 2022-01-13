@@ -4,7 +4,7 @@ import fs from 'fs-extra';
 import { parseNicknames } from '../utils/parseNicknames';
 import { ClientType } from '../types/ClientType';
 
-export const bootstrapClients = async (clients: ClientType[]): Promise<void> => {
+export const copyClients = async (clients: ClientType[]): Promise<void> => {
   const clientPath = path.join(__dirname, '../../public/clients/CS');
   const modsPath = path.join(__dirname, '../../public/mods');
 

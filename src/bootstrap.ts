@@ -1,8 +1,8 @@
 import chalk from 'chalk';
 import lodash from 'lodash';
-import { bootstrapClients } from './bootstrap/bootstrapClients';
-import { bootstrapSandboxie } from './bootstrap/bootstrapSandboxie';
-import { bootstrapStartBat } from './bootstrap/bootstrapStartBat';
+import { copyClients } from './bootstrap/copyClients';
+import { configureSandboxie } from './bootstrap/configureSandboxie';
+import { createStartBat } from './bootstrap/createStartBat';
 import { config } from '../public/config';
 
 const bootstrap = async () => {
@@ -26,7 +26,7 @@ const bootstrap = async () => {
   const processedClients = shuffleClients ? lodash.shuffle(enabledClients) : enabledClients;
 
   try {
-    await bootstrapClients(processedClients);
+    await copyClients(processedClients);
     console.log(`Копирование клиентов - ${chalk.green('успешно')}`);
   } catch (err) {
     console.log(`Копирование клиентов - ${chalk.red('ошибка')}`, err);
@@ -34,7 +34,7 @@ const bootstrap = async () => {
   }
 
   try {
-    await bootstrapSandboxie(processedClients);
+    await configureSandboxie(processedClients);
     console.log(`Настройка Sandboxie - ${chalk.green('успешно')}`);
   } catch (err) {
     console.log(`Настройка Sandboxie - ${chalk.red('ошибка')}`, err);
@@ -42,7 +42,7 @@ const bootstrap = async () => {
   }
 
   try {
-    await bootstrapStartBat(
+    await createStartBat(
       processedClients,
       startTimeout,
       windowedMode,

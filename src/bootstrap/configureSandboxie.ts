@@ -2,7 +2,7 @@ import path from 'path';
 import fs from 'fs-extra';
 import { ClientType } from '../types/ClientType';
 
-export const bootstrapSandboxie = async (clients: ClientType[]): Promise<void> => {
+export const configureSandboxie = async (clients: ClientType[]): Promise<void> => {
   let config = await fs.readFile(path.join(__dirname, '../utils/Sandboxie.ini'), 'utf-16le');
 
   clients.forEach((client, i) => {

@@ -1,9 +1,9 @@
 import path from 'path';
 import fs from 'fs-extra';
-import { ConfigType } from '../types/ConfigType';
+import { ClientType } from '../types/ClientType';
 
 export const bootstrapStartBat = async (
-  clients: ConfigType['clients'],
+  clients: ClientType[],
   startTimeout: number,
   windowedMode: boolean,
   lowGraphics: boolean,

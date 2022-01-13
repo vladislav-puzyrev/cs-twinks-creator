@@ -2,9 +2,9 @@ import path from 'path';
 import lodash from 'lodash';
 import fs from 'fs-extra';
 import { parseNicknames } from '../utils/parseNicknames';
-import { ConfigType } from '../types/ConfigType';
+import { ClientType } from '../types/ClientType';
 
-export const bootstrapClients = async (clients: ConfigType['clients']): Promise<void> => {
+export const bootstrapClients = async (clients: ClientType[]): Promise<void> => {
   const clientPath = path.join(__dirname, '../../public/clients/CS');
   const modsPath = path.join(__dirname, '../../public/mods');
 

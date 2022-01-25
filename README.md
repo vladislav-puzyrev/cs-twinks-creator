@@ -93,6 +93,14 @@ yarn run start
 yarn run cleanup
 ```
 
+## Failed to initialize authentication interface
+
+Для решение этой ошибки проделайте следующее:
+
+1. Запустите `regedit.exe`.
+2. Найдите и удалите `HKEY_CURRENT_USER\Software\Valve`.
+3. Если у вас есть `Steam`, придется перезайти в аккаунт.
+
 ## Как закрыть все твинки?
 
 Вы можете убить все процессы `hl.exe` через контекстное меню `Sandboxie` нажав

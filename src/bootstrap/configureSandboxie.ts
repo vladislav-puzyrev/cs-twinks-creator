@@ -1,12 +1,12 @@
-import path from 'path';
-import fs from 'fs-extra';
-import { ClientType } from '../types/ClientType';
+import path from 'path'
+import fs from 'fs-extra'
+import { ClientType } from '../types/ClientType'
 
 export const configureSandboxie = async (clients: ClientType[]): Promise<void> => {
-  let config = await fs.readFile(path.join(__dirname, '../utils/Sandboxie.ini'), 'utf-16le');
+  let config = await fs.readFile(path.join(__dirname, '../utils/Sandboxie.ini'), 'utf-16le')
 
   clients.forEach((client, i) => {
-    const clientPath = path.join(__dirname, `../../public/clients/CS_${i + 1}`);
+    const clientPath = path.join(__dirname, `../../public/clients/CS_${i + 1}`)
 
     config += `
 [CS_${i + 1}]
@@ -28,8 +28,8 @@ Template=Firefox_Phishing_DirectAccess
 Template=AutoRecoverIgnore
 ConfigLevel=9
 ForceFolder=${clientPath}
-`;
-  });
+`
+  })
 
-  await fs.writeFile('C:/Windows/Sandboxie.ini', config, { encoding: 'utf-16le' });
-};
+  await fs.writeFile('C:/Windows/Sandboxie.ini', config, { encoding: 'utf-16le' })
+}

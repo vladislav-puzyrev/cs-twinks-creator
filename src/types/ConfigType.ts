@@ -1,3 +1,3 @@
-import { config } from '../../public/config';
+import { config } from '../../public/config'
 
-export type ConfigType = typeof config;
+export type ConfigType = typeof config

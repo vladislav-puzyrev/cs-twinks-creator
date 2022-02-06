@@ -17,131 +17,131 @@ export const config = {
       // Никнейм (например - nickname: "Player")
       nickname: null,
       // SteamID (например - steamId: "8483213")
-      steamId: null,
+      steamId: null
     },
     {
       nickname: null,
-      steamId: null,
+      steamId: null
     },
     {
       nickname: null,
-      steamId: null,
+      steamId: null
     },
     {
       nickname: null,
-      steamId: null,
+      steamId: null
     },
     {
       nickname: null,
-      steamId: null,
+      steamId: null
     },
     {
       nickname: null,
-      steamId: null,
+      steamId: null
     },
     {
       nickname: null,
-      steamId: null,
+      steamId: null
     },
     {
       nickname: null,
-      steamId: null,
+      steamId: null
     },
     {
       nickname: null,
-      steamId: null,
+      steamId: null
     },
     {
       nickname: null,
-      steamId: null,
+      steamId: null
     },
     {
       nickname: null,
-      steamId: null,
+      steamId: null
     },
     {
       nickname: null,
-      steamId: null,
+      steamId: null
     },
     {
       nickname: null,
-      steamId: null,
+      steamId: null
     },
     {
       nickname: null,
-      steamId: null,
+      steamId: null
     },
     {
       nickname: null,
-      steamId: null,
+      steamId: null
     },
     {
       nickname: null,
-      steamId: null,
+      steamId: null
     },
     {
       nickname: null,
-      steamId: null,
+      steamId: null
     },
     {
       nickname: null,
-      steamId: null,
+      steamId: null
     },
     {
       nickname: null,
-      steamId: null,
+      steamId: null
     },
     {
       nickname: null,
-      steamId: null,
+      steamId: null
     },
     {
       nickname: null,
-      steamId: null,
+      steamId: null
     },
     {
       nickname: null,
-      steamId: null,
+      steamId: null
     },
     {
       nickname: null,
-      steamId: null,
+      steamId: null
     },
     {
       nickname: null,
-      steamId: null,
+      steamId: null
     },
     {
       nickname: null,
-      steamId: null,
+      steamId: null
     },
     {
       nickname: null,
-      steamId: null,
+      steamId: null
     },
     {
       nickname: null,
-      steamId: null,
+      steamId: null
     },
     {
       nickname: null,
-      steamId: null,
+      steamId: null
     },
     {
       nickname: null,
-      steamId: null,
+      steamId: null
     },
     {
       nickname: null,
-      steamId: null,
+      steamId: null
     },
     {
       nickname: null,
-      steamId: null,
+      steamId: null
     },
     {
       nickname: null,
-      steamId: null,
-    },
-  ] as Array<{ nickname: string | null, steamId: string | null }>,
-};
+      steamId: null
+    }
+  ] as Array<{ nickname: string | null, steamId: string | null }>
+}

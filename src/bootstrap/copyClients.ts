@@ -32,7 +32,7 @@ export const copyClients = async (clients: ClientType[]): Promise<void> => {
       )
       .replace(
         'steam_random_id "1"',
-        (steamId !== null) ? `steam_set_id "${steamId}"` : 'steam_random_id "1"'
+        (steamId != null) ? `steam_set_id "${steamId}"` : 'steam_random_id "1"'
       )
 
     const operations = [

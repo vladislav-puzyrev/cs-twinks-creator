@@ -3,7 +3,7 @@ import lodash from 'lodash'
 import { copyClients } from './bootstrap/copyClients'
 import { configureSandboxie } from './bootstrap/configureSandboxie'
 import { createStartBat } from './bootstrap/createStartBat'
-import { config } from '../public/config'
+import { config } from '../user-data/config'
 
 const bootstrap = async (): Promise<void> => {
   const {

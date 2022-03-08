@@ -10,7 +10,7 @@ export const createStartBat = async (
   highPriority: boolean
 ): Promise<void> => {
   const startBatPath = path.join(__dirname, '../../start.bat')
-  const clientPath = path.join(__dirname, '../../public/clients/CS_%%i')
+  const clientPath = path.join(__dirname, '../../user-data/clients/CS_%%i')
   const timeout = (startTimeout !== 0) ? `\n  timeout ${startTimeout}` : ''
   const priority = highPriority ? ' /high' : ''
   const windowed = windowedMode ? ' -window' : ''

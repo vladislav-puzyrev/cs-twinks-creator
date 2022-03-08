@@ -28,9 +28,9 @@ yarn-error.log*
 .env.production.local
 
 # clients
-/public/clients/**
-!/public/clients/*
-!/public/clients/CS/.gitkeep
+/user-data/clients/**
+!/user-data/clients/*
+!/user-data/clients/CS/.gitkeep
 
 # ide
 /.idea

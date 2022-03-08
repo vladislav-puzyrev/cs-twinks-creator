@@ -5,8 +5,8 @@ import { parseNicknames } from '../utils/parseNicknames'
 import { ClientType } from '../types/ClientType'
 
 export const copyClients = async (clients: ClientType[]): Promise<void> => {
-  const clientPath = path.join(__dirname, '../../public/clients/CS')
-  const modsPath = path.join(__dirname, '../../public/mods')
+  const clientPath = path.join(__dirname, '../../user-data/clients/CS')
+  const modsPath = path.join(__dirname, '../../user-data/mods')
 
   const copyClientOperations = clients.map(async (client, i) => {
     return await fs.copy(clientPath, `${clientPath}_${i + 1}`, { overwrite: true })
@@ -15,8 +15,8 @@ export const copyClients = async (clients: ClientType[]): Promise<void> => {
   await Promise.all(copyClientOperations)
 
   const [userConfig, config, nicknames] = await Promise.all([
-    fs.readFile(path.join(__dirname, '../../public/userconfig.cfg'), 'utf-8'),
-    fs.readFile(path.join(__dirname, '../../public/clients/CS/cstrike/config.cfg'), 'utf-8'),
+    fs.readFile(path.join(__dirname, '../../user-data/userconfig.cfg'), 'utf-8'),
+    fs.readFile(path.join(__dirname, '../../user-data/clients/CS/cstrike/config.cfg'), 'utf-8'),
     parseNicknames()
   ])
 

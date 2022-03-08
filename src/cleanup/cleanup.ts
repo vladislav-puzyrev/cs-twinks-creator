@@ -1,7 +1,7 @@
 import chalk from 'chalk'
-import { removeClients } from './cleanup/removeClients'
-import { resetSandboxie } from './cleanup/resetSandboxie'
-import { removeStartBat } from './cleanup/removeStartBat'
+import { removeClients } from './removeClients'
+import { resetSandboxie } from './resetSandboxie'
+import { removeStartBat } from './removeStartBat'
 
 const cleanup = async (): Promise<void> => {
   try {
@@ -31,7 +31,9 @@ cleanup()
     console.log()
     console.log(chalk.bgGreen('Очистка произведена успешно'))
   })
-  .catch(() => {
-    console.log()
-    console.log(chalk.bgRed('Произошла непредвиденная ошибка'))
+  .catch((err) => {
+    if (err instanceof Error) {
+      console.log()
+      console.log(`${chalk.bgRed('Произошла непредвиденная ошибка')} ${err.message}`)
+    }
   })

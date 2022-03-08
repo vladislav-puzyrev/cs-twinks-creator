@@ -3,8 +3,8 @@
   "private": true,
   "scripts": {
     "start": "start.bat",
-    "bootstrap": "ts-node src/bootstrap.ts",
-    "cleanup": "ts-node src/cleanup.ts",
+    "bootstrap": "ts-node src/bootstrap/bootstrap.ts",
+    "cleanup": "ts-node src/cleanup/cleanup.ts",
     "test": "yarn run test:typescript && yarn run test:eslint",
     "test:typescript": "tsc --noEmit",
     "test:eslint": "eslint ."

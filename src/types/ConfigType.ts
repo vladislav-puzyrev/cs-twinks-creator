@@ -1,3 +1,5 @@
+import { ClientType } from './ClientType'
+
 export interface ConfigType {
   startTimeout: number
   windowedMode: boolean
@@ -5,8 +7,5 @@ export interface ConfigType {
   highPriority: boolean
   shuffleClients: boolean
   activeClients: number
-  clients: Array<{
-    nickname?: string | null
-    steamId?: string | null
-  }>
+  clients: ClientType[]
 }

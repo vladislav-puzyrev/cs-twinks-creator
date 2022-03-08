@@ -1,3 +1,4 @@
-import { ConfigType } from './ConfigType'
-
-export type ClientType = ConfigType['clients'][number]
+export interface ClientType {
+  nickname?: string | null
+  steamId?: string | null
+}

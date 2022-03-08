@@ -1,14 +1,14 @@
 import path from 'path'
-import fs from 'fs-extra'
 import chalk from 'chalk'
 import lodash from 'lodash'
-import { copyClients } from './bootstrap/copyClients'
-import { configureSandboxie } from './bootstrap/configureSandboxie'
-import { createStartBat } from './bootstrap/createStartBat'
-import { ConfigType } from './types/ConfigType'
+import fs from 'fs-extra'
+import { copyClients } from './copyClients'
+import { configureSandboxie } from './configureSandboxie'
+import { createStartBat } from './createStartBat'
+import { ConfigType } from '../types/ConfigType'
 
 const bootstrap = async (): Promise<void> => {
-  const config: ConfigType = await fs.readJSON(path.join(__dirname, '../user-data/config.json'))
+  const config: ConfigType = await fs.readJSON(path.join(__dirname, '../../user-data/config.json'))
 
   const {
     startTimeout,
@@ -65,7 +65,9 @@ bootstrap()
     console.log()
     console.log(chalk.bgGreen('Все операции выполнены успешно'))
   })
-  .catch(() => {
-    console.log()
-    console.log(chalk.bgRed('На одном из этапов произошла ошибка'))
+  .catch((err) => {
+    if (err instanceof Error) {
+      console.log()
+      console.log(`${chalk.bgRed('На одном из этапов произошла ошибка')} ${err.message}`)
+    }
   })

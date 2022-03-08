@@ -11,7 +11,7 @@ export const configureSandboxie = async (clients: ClientType[]): Promise<void> =
     config += `
 [CS_${i + 1}]
 Enabled=y
-AutoRecover=n
+AutoRecover=y
 BlockNetworkFiles=y
 RecoverFolder=%{374DE290-123F-4565-9164-39C4925E467B}%
 RecoverFolder=%Personal%

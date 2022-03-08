@@ -1,11 +1,15 @@
+import path from 'path'
+import fs from 'fs-extra'
 import chalk from 'chalk'
 import lodash from 'lodash'
 import { copyClients } from './bootstrap/copyClients'
 import { configureSandboxie } from './bootstrap/configureSandboxie'
 import { createStartBat } from './bootstrap/createStartBat'
-import { config } from '../user-data/config'
+import { ConfigType } from './types/ConfigType'
 
 const bootstrap = async (): Promise<void> => {
+  const config: ConfigType = await fs.readJSON(path.join(__dirname, '../user-data/config.json'))
+
   const {
     startTimeout,
     windowedMode,

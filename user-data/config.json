@@ -1,0 +1,138 @@
+{
+  "startTimeout": 0,
+  "windowedMode": true,
+  "lowGraphics": true,
+  "highPriority": false,
+  "shuffleClients": false,
+  "activeClients": 5,
+  "clients": [
+    {
+      "nickname": null,
+      "steamId": null
+    },
+    {
+      "nickname": null,
+      "steamId": null
+    },
+    {
+      "nickname": null,
+      "steamId": null
+    },
+    {
+      "nickname": null,
+      "steamId": null
+    },
+    {
+      "nickname": null,
+      "steamId": null
+    },
+    {
+      "nickname": null,
+      "steamId": null
+    },
+    {
+      "nickname": null,
+      "steamId": null
+    },
+    {
+      "nickname": null,
+      "steamId": null
+    },
+    {
+      "nickname": null,
+      "steamId": null
+    },
+    {
+      "nickname": null,
+      "steamId": null
+    },
+    {
+      "nickname": null,
+      "steamId": null
+    },
+    {
+      "nickname": null,
+      "steamId": null
+    },
+    {
+      "nickname": null,
+      "steamId": null
+    },
+    {
+      "nickname": null,
+      "steamId": null
+    },
+    {
+      "nickname": null,
+      "steamId": null
+    },
+    {
+      "nickname": null,
+      "steamId": null
+    },
+    {
+      "nickname": null,
+      "steamId": null
+    },
+    {
+      "nickname": null,
+      "steamId": null
+    },
+    {
+      "nickname": null,
+      "steamId": null
+    },
+    {
+      "nickname": null,
+      "steamId": null
+    },
+    {
+      "nickname": null,
+      "steamId": null
+    },
+    {
+      "nickname": null,
+      "steamId": null
+    },
+    {
+      "nickname": null,
+      "steamId": null
+    },
+    {
+      "nickname": null,
+      "steamId": null
+    },
+    {
+      "nickname": null,
+      "steamId": null
+    },
+    {
+      "nickname": null,
+      "steamId": null
+    },
+    {
+      "nickname": null,
+      "steamId": null
+    },
+    {
+      "nickname": null,
+      "steamId": null
+    },
+    {
+      "nickname": null,
+      "steamId": null
+    },
+    {
+      "nickname": null,
+      "steamId": null
+    },
+    {
+      "nickname": null,
+      "steamId": null
+    },
+    {
+      "nickname": null,
+      "steamId": null
+    }
+  ]
+}

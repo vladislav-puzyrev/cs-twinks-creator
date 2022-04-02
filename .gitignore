@@ -30,7 +30,7 @@ yarn-error.log*
 # clients
 /user-data/clients/**
 !/user-data/clients/*
-!/user-data/clients/CS/.gitkeep
+!/user-data/clients/CS/**
 
 # ide
 /.idea

@@ -6,7 +6,7 @@ export const removeClients = async (): Promise<void> => {
   const clientsNames = await fs.readdir(clientsPath)
 
   const removeClientOperations = clientsNames
-    .filter((clientName) => clientName !== 'CS')
+    .filter((clientName) => clientName !== 'CS.zip')
     .map(async (clientName) => await fs.remove(`${clientsPath}/${clientName}`))
 
   await Promise.all(removeClientOperations)

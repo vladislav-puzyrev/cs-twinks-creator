@@ -1,7 +1,7 @@
 import path from 'path'
-import chalk from 'chalk'
 import lodash from 'lodash'
 import fs from 'fs-extra'
+import { logger } from '../utils/logger'
 import { copyClients } from './copyClients'
 import { configureSandboxie } from './configureSandboxie'
 import { createStartBat } from './createStartBat'
@@ -22,7 +22,7 @@ const bootstrap = async (): Promise<void> => {
 
   if (activeClients < 1 || activeClients > 32) {
     const err = new Error('activeClients must be greater than 1 and less than 32')
-    console.log(`Проверка конфигурации - ${chalk.red('ошибка')}`, err)
+    logger('error', `Ошибка конфигурации: ${err.message}`)
     throw err
   }
 
@@ -30,22 +30,29 @@ const bootstrap = async (): Promise<void> => {
   const processedClients = shuffleClients ? lodash.shuffle(enabledClients) : enabledClients
 
   try {
+    logger('info', 'Идет копирование клиентов')
     await copyClients(processedClients)
-    console.log(`Копирование клиентов - ${chalk.green('успешно')}`)
+    logger('success', 'Завершено копирование клиентов')
   } catch (err) {
-    console.log(`Копирование клиентов - ${chalk.red('ошибка')}`, err)
-    throw err
+    if (err instanceof Error) {
+      logger('error', `Ошибка копирования клиентов: ${err.message}`)
+      throw err
+    }
   }
 
   try {
+    logger('info', 'Идет настройка Sandboxie')
     await configureSandboxie(processedClients)
-    console.log(`Настройка Sandboxie - ${chalk.green('успешно')}`)
+    logger('success', 'Завершена настройка Sandboxie')
   } catch (err) {
-    console.log(`Настройка Sandboxie - ${chalk.red('ошибка')}`, err)
-    throw err
+    if (err instanceof Error) {
+      logger('error', `Ошибка настройки Sandboxie: ${err.message}`)
+      throw err
+    }
   }
 
   try {
+    logger('info', 'Идет создание start.bat')
     await createStartBat(
       processedClients,
       startTimeout,
@@ -53,21 +60,21 @@ const bootstrap = async (): Promise<void> => {
       lowGraphics,
       highPriority
     )
-    console.log(`Создание start.bat - ${chalk.green('успешно')}`)
+    logger('success', 'Завершено создание start.bat')
   } catch (err) {
-    console.log(`Создание start.bat - ${chalk.red('ошибка')}`, err)
-    throw err
+    if (err instanceof Error) {
+      logger('error', `Ошибка создания start.bat: ${err.message}`)
+      throw err
+    }
   }
 }
 
 bootstrap()
   .then(() => {
-    console.log()
-    console.log(chalk.bgGreen('Все операции выполнены успешно'))
+    logger('success', 'Настройка завершена', { lineBreak: true })
   })
   .catch((err) => {
     if (err instanceof Error) {
-      console.log()
-      console.log(`${chalk.bgRed('На одном из этапов произошла ошибка')} ${err.message}`)
+      logger('error', `Непредвиденная ошибка: ${err.message}`, { lineBreak: true })
     }
   })

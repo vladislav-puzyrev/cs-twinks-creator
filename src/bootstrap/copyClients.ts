@@ -1,22 +1,24 @@
 import path from 'path'
 import lodash from 'lodash'
 import fs from 'fs-extra'
+import decompress from 'decompress'
 import { parseNicknames } from '../utils/parseNicknames'
 import { ClientType } from '../types/ClientType'
 
 export const copyClients = async (clients: ClientType[]): Promise<void> => {
+  const archivePath = path.join(__dirname, '../../user-data/clients/CS.zip')
   const clientPath = path.join(__dirname, '../../user-data/clients/CS')
   const modsPath = path.join(__dirname, '../../user-data/mods')
 
   const copyClientOperations = clients.map(async (client, i) => {
-    return await fs.copy(clientPath, `${clientPath}_${i + 1}`, { overwrite: true })
+    return await decompress(archivePath, `${clientPath}_${i + 1}`)
   })
 
   await Promise.all(copyClientOperations)
 
   const [userConfig, config, nicknames] = await Promise.all([
     fs.readFile(path.join(__dirname, '../../user-data/userconfig.cfg'), 'utf-8'),
-    fs.readFile(path.join(__dirname, '../../user-data/clients/CS/cstrike/config.cfg'), 'utf-8'),
+    fs.readFile(path.join(__dirname, '../../user-data/clients/CS_1/cstrike/config.cfg'), 'utf-8'),
     parseNicknames()
   ])
 

@@ -25,7 +25,6 @@ Template=BlockPorts
 Template=LingerPrograms
 Template=AutoRecoverIgnore
 ConfigLevel=9
-UsePrivacyMode=n
 ForceFolder=${clientPath}
 `
   })

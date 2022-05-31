@@ -4,7 +4,7 @@
   "lowGraphics": true,
   "highPriority": false,
   "shuffleClients": false,
-  "activeClients": 5,
+  "activeClients": 6,
   "clients": [
     {
       "nickname": null,

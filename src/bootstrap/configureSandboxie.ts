@@ -6,12 +6,12 @@ export const configureSandboxie = async (clients: ClientType[]): Promise<void> =
   let config = await fs.readFile(path.join(__dirname, '../utils/Sandboxie.ini'), 'utf-16le')
 
   clients.forEach((client, i) => {
-    const clientPath = path.join(__dirname, `../../user-data/clients/CS_${i + 1}`)
+    const clientPath = path.join(__dirname, `../../settings/clients/CS_${i + 1}`)
 
     config += `
 [CS_${i + 1}]
 Enabled=y
-AutoRecover=y
+AutoRecover=n
 BlockNetworkFiles=y
 RecoverFolder=%{374DE290-123F-4565-9164-39C4925E467B}%
 RecoverFolder=%Personal%
@@ -25,6 +25,7 @@ Template=BlockPorts
 Template=LingerPrograms
 Template=AutoRecoverIgnore
 ConfigLevel=9
+UsePrivacyMode=n
 ForceFolder=${clientPath}
 `
   })

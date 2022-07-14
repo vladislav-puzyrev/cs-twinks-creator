@@ -10,7 +10,7 @@ const cleanup = async (): Promise<void> => {
     logger('success', 'Завершено удаление клиентов')
   } catch (err) {
     if (err instanceof Error) {
-      logger('error', `Ошибка удаления клиентов: ${err.message}`)
+      logger('error', `Ошибка удаления клиентов. ${err.message}`)
     }
   }
 
@@ -20,7 +20,7 @@ const cleanup = async (): Promise<void> => {
     logger('success', 'Завершен сброс Sandboxie')
   } catch (err) {
     if (err instanceof Error) {
-      logger('error', `Ошибка сброса Sandboxie: ${err.message}`)
+      logger('error', `Ошибка сброса Sandboxie. ${err.message}`)
     }
   }
 
@@ -30,7 +30,7 @@ const cleanup = async (): Promise<void> => {
     logger('success', 'Завершено удаление start.bat')
   } catch (err) {
     if (err instanceof Error) {
-      logger('error', `Ошибка удаления start.bat: ${err.message}`)
+      logger('error', `Ошибка удаления start.bat. ${err.message}`)
     }
   }
 }
@@ -41,6 +41,6 @@ cleanup()
   })
   .catch((err) => {
     if (err instanceof Error) {
-      logger('error', `Непредвиденная ошибка: ${err.message}`, { lineBreak: true })
+      logger('error', `Непредвиденная ошибка. ${err.message}`, { lineBreak: true })
     }
   })

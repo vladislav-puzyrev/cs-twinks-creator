@@ -1,55 +1,15 @@
 import path from 'path'
-import lodash from 'lodash'
-import fs from 'fs-extra'
 import decompress from 'decompress'
-import { parseNicknames } from '../utils/parseNicknames'
+import { configureClients } from '../utils/configureClients'
 import { ClientType } from '../types/ClientType'
 
 export const copyClients = async (clients: ClientType[]): Promise<void> => {
-  const archivePath = path.join(__dirname, '../../user-data/clients/CS.zip')
-  const clientPath = path.join(__dirname, '../../user-data/clients/CS')
-  const modsPath = path.join(__dirname, '../../user-data/mods')
+  const clientPath = path.join(__dirname, '../../settings/clients/CS')
 
   const copyClientOperations = clients.map(async (client, i) => {
-    return await decompress(archivePath, `${clientPath}_${i + 1}`)
+    return await decompress(`${clientPath}.zip`, `${clientPath}_${i + 1}`)
   })
 
   await Promise.all(copyClientOperations)
-
-  const [userConfig, config, nicknames] = await Promise.all([
-    fs.readFile(path.join(__dirname, '../../user-data/userconfig.cfg'), 'utf-8'),
-    fs.readFile(path.join(__dirname, '../../user-data/clients/CS_1/cstrike/config.cfg'), 'utf-8'),
-    parseNicknames()
-  ])
-
-  const configureClientOperations = clients.map((client, i) => {
-    const { nickname, steamId } = client
-    const configPath = `${clientPath}_${i + 1}/cstrike/config.cfg`
-    const userConfigPath = `${clientPath}_${i + 1}/cstrike/userconfig.cfg`
-
-    const processedUserConfig = userConfig
-      .replace(
-        '%name%',
-        nickname ?? nicknames[lodash.random(0, nicknames.length - 1)]
-      )
-      .replace(
-        'steam_random_id "1"',
-        (steamId != null) ? `steam_set_id "${steamId}"` : 'steam_random_id "1"'
-      )
-
-    const operations = [
-      fs.copy(modsPath, `${clientPath}_${i + 1}`, { overwrite: true }),
-      fs.writeFile(userConfigPath, processedUserConfig)
-    ]
-
-    if (!config.includes('exec userconfig.cfg')) {
-      operations.push(
-        fs.writeFile(configPath, `${config}\nexec userconfig.cfg`)
-      )
-    }
-
-    return operations
-  })
-
-  await Promise.all(configureClientOperations.flat())
+  await configureClients(clients)
 }

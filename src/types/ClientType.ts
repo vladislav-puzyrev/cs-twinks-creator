@@ -1,4 +1,4 @@
 export interface ClientType {
-  nickname?: string | null
+  name?: string | null
   steamId?: string | null
 }

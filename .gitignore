@@ -10,8 +10,8 @@
 
 # production
 /build
-/user-data/clients/**
-!/user-data/clients/CS.zip
+/settings/clients/**
+!/settings/clients/CS.zip
 start.bat
 
 # misc
